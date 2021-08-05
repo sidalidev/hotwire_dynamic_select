@@ -56,6 +56,14 @@ class AddressesController < ApplicationController
     end
   end
 
+  def states
+    @states = CS.get(params[:country]).invert # We want the name to be the key
+    @target = params[:target]
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address
