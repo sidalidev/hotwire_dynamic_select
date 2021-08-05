@@ -11,14 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.select :country, CS.countries.invert, { prompt: 'Select a country' } %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.select :state, [], {} %>
+  <div data-controller='country'>
+    <div class="field">
+      <%= form.label :country %>
+      <%= form.select :country, CS.countries.invert, { prompt: 'Select a country', data: { action: 'change->country#change' } } %>
+    </div>
+    <div class="field">
+      <%= form.label :state %>
+      <%= form.select :state, [], {} %>
+    </div>
   </div>
 
   <div class="actions">
