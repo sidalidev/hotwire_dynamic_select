@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.text_field :country %>
+    <%= form.select :country, CS.countries.invert, { prompt: 'Select a country' } %>
   </div>
 
   <div class="field">
     <%= form.label :state %>
-    <%= form.text_field :state %>
+    <%= form.select :state, [], {} %>
   </div>
 
   <div class="actions">
